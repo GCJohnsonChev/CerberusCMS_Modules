@@ -1,0 +1,123 @@
+<?php
+/*
+ ===========================================================================================
+ + Cerberus Content Management System.
+ + ---
+ + - Author : Gary Christopher Johnson
+ + - E-Mail : TinkeSoftware@Protonmail.com // GCJohnsonChevalier@Protonmail.com
+ + - Company: Tinke Software
+ + - Notes  : View this file in a non-formatting text editor for correct indentation display
+ + ---
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ + ---
+ + - File Location: root->Module->User->Calculator
+ + - File Version:  0.5 - Tuesday, August 9, 2022.
+ + ---
+ +%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ +%%%()()%%()()()%%()()()%%()()()%%()()()%%()()()%%()%%()%%%%%%()()()%%%%%%%%%%%%
+ +%%()%%%%%()%%%%%%()%%()%%()%%()%%()%%%%%%()%%()%%()%%()%%%%%%()%%%%%%%%%%%%%%%%
+ +%%()%%%%%()%%%%%%()%%()%%()%%()%%()%%%%%%()%%()%%()%%()%%%%%%()%%%%%%%%%%%%%%%%
+ +%%()%%%%%()%%%%%%()%%()%%()%%()%%()%%%%%%()%%()%%()%%()%%%%%%()%%%%%%%%%%%%%%%%
+ +%%()%%%%%()()()%%()()()%%()()()%%()()()%%()()()%%()%%()%%%%%%()%%%%%%%%%%%%%%%%
+ +%%()%%%%%()%%%%%%()%%()%%()%%()%%()%%%%%%()%%()%%()%%()%%%%%%()%%%%%%%%%%%%%%%%
+ +%%()%%%%%()%%%%%%()%%()%%()%%()%%()%%%%%%()%%()%%()%%()%%%%%%()%%%%%%%%%%%%/-\%
+ +%%()%%%%%()%%%%%%()%%()%%()%%()%%()%%%%%%()%%()%%()%%()%%%%%%()%%%%%%%%%%%%|4|%  ~ Wynn ~
+ +%%%()()%%()()()%%()%%()%%()()()%%()()()%%()%%()%%()()()%%()()()%%%%%%%%%%%%\-/% Build: 0.7
+ ===========================================================================================
+*/
+
+/*
+ ===========================
+ + Scientific, Basic, Advanced
+ + Specific, Unique
+ +
+ + Calculator
+ +
+ +
+ +
+ ===========================
+*/
+
+/*
+ ===========================
+ +
+ + Calculator Header
+ +
+ ===========================
+*/
+
+											echo ($_Message_Calculator_Header);
+
+/*
+ ===========================
+ +
+ + Single Fraction Calculator
+ +
+ ===========================
+*/
+
+/*
+ ===========================
+ +
+ + DisplayInput->SingleFraction
+ +
+ ===========================
+*/
+
+
+if ($_GET["DisplayInput"] == "SingleFraction") {
+
+/*
+ ===========================
+ + Single Fraction Variables
+ ===========================
+*/
+
+$_Module_Calculator_Single_Fraction_POST_NUMERATOR 				= $_POST['post_single_fraction_calculator_numerator'];
+$_Module_Calculator_Single_Fraction_POST_OPERATION 				= $_POST['post_single_fraction_calculator_operation'];
+$_Module_Calculator_Single_Fraction_POST_DENOMINATOR 				= $_POST['post_single_fraction_calculator_denominator'];
+
+if (!$_Module_Fraction_Calculator_POST_NUMERATOR || !$_Module_Fraction_Calculator_POST_OPERATION || !$_Module_Fraction_Calculator_POST_DENOMINATOR) {
+
+/*
+ ===========================
+ + Single Fraction Form
+ ===========================
+*/
+
+echo ("
+											<FORM ACTION=\"?$_INTERNAL_USER_MODULE&#61;Fraction_Calculator\" METHOD=\"post\">
+												* Numerator:<BR>
+													<INPUT TYPE=\"text\" NAME=\"post_single_fraction_calculator_numerator\" MAXLENGTH=\"25\"><BR>
+												* Operation: ( + ) / ( - ) / ( * ) / ( / ) / ( ^ ) / ( % ) / ( MOD )
+													<INPUT TYPE=\"text\" NAME=\"post_single_fraction_calculator_operation\" MAXLENGTH=\"1\"><BR>
+												* Denominator:<BR>
+													<INPUT TYPE=\"text\" NAME=\"post_single_fraction_calculator_denominator\" MAXLENGTH=\"25\"><BR>
+													<INPUT TYPE=\"submit\" VALUE=\"Calculate\">
+											</FORM><BR>
+");
+
+} else {
+
+/*
+This is just a placeholder. add arrays for looking up the exact decimal of the denominator later on
+*/
+
+$_Module_Calculator_Single_Fraction_CALCULATE = $_Module_Calculator_Single_Fraction_POST_NUMERATOR $_Module_Calculator_Single_Fraction_POST_OPERATION $_Module_Calculator_Single_Fraction_POST_DENOMINATOR;
+
+echo ($_Module_Calculator_Single_Fraction_CALCULATE);
+
+} // [ + ] IF_!POST_Module_Fraction_Calculator
+
+} // [ + ] IF_GET_DisplayInput
+?>
