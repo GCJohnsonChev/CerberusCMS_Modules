@@ -96,7 +96,7 @@ if (!$_Module_Fraction_Calculator_POST_NUMERATOR || !$_Module_Fraction_Calculato
 */
 
 echo ("
-											<FORM ACTION=\"?$_INTERNAL_USER_MODULE&#61;Fraction_Calculator\" METHOD=\"post\">
+											<FORM ACTION=\"?$_INTERNAL_USER_MODULE&#61;Calculator&DisplayInput&#61;SingleFraction\" METHOD=\"post\">
 												* Numerator:<BR>
 													<INPUT TYPE=\"text\" NAME=\"post_single_fraction_calculator_numerator\" MAXLENGTH=\"25\"><BR>
 												* Operation: ( + ) / ( - ) / ( * ) / ( / ) / ( ^ ) / ( % ) / ( MOD )
